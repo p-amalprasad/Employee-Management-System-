@@ -1,0 +1,51 @@
+﻿@model List<LogGenerator.Models.Domain.Submission>
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container text-center">
+        <h1>Logs</h1>
+    </div>
+</div>
+
+<div class="container py-3">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Log no</td>
+                    <td>Table Altered</td>
+                    <td>Action</td>
+                    <td>Column Altered</td>
+                    <td>Row Altered</td>
+                    <td>Previous Entry</td>
+                    <td>Latest Entry</td>
+                    <td>IP Address</td>
+                    <td>Time Stamp</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var submissions in Model)
+                {
+                    <tr>
+                        <td>@submissions.LogNo</td>
+                        <td>@submissions.TableAltered</td>
+                        <td>@submissions.Action</td>
+                        <td>@submissions.ColumnEdited</td>
+                        <td>@submissions.RowEdited</td>
+                        <td>@submissions.PreviousEntry</td>
+                        <td>@submissions.LatestEntry</td>
+                        <td>@submissions.IPAddress</td>
+                        <td>@submissions.TimeStamp</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No logs.</p>
+    }
+
+</div>                    

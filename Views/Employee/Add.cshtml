@@ -1,0 +1,57 @@
+﻿@model LogGenerator.Models.ViewModels.AddEmployee
+
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container text-center">
+        <h1>New Employee Registration</h1>
+    </div>
+</div>
+
+<div class="container py-3">
+    <form method="post">
+
+        <div class="mb-3">
+            <label class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="name" asp-for="Name" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="mobileNo" asp-for="MobileNo" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" asp-for="Address" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">DOB</label>
+            <input type="date" class="form-control" id="dob" asp-for="DoB" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">About</label>
+            <textarea class="form-control" id="about" asp-for="About"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Role</label>
+            <input type="text" class="form-control" id="role" asp-for="Role" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Job Description</label>
+            <textarea class="form-control" id="jobDesc" asp-for="JobDesc"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark">
+                Save
+            </button>
+        </div>
+
+    </form>
+</div>

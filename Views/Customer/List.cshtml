@@ -1,0 +1,56 @@
+﻿@model List<LogGenerator.Models.Domain.NewCustomer>
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container text-center">
+        <h1>Customers</h1>
+    </div>
+</div>
+
+<div class="container py-3">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Customer Id</td>
+                    <td>Company Name</td>
+                    <td>Mobile</td>
+                    <td>Email</td>
+                    <td>Customer Type</td>
+                    <td>Address</td>
+                    <td>Customer Since</td>
+                    <td> </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var newCustomer in Model)
+                {
+                    <tr>
+                        <td>@newCustomer.CustId</td>
+                        <td>@newCustomer.Company</td>
+                        <td>@newCustomer.MobileNo</td>
+                        <td>@newCustomer.Email</td>
+                        <td>@newCustomer.CustType</td>
+                        <td>@newCustomer.Address</td>
+                        <td>@newCustomer.CustSince</td>
+                        <td>
+                            <a asp-area=""
+                               asp-controller="Customer"
+                               asp-action="Edit"
+                               asp-route-id="@newCustomer.CustId">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Customers!</p>
+    }
+
+</div>

@@ -1,0 +1,73 @@
+﻿@model LogGenerator.Models.ViewModels.EditEmployeeRequest
+
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Edit Employee Detail</h1>
+    </div>
+</div>
+
+<div class="container py-3">
+    @if (Model != null)
+    {
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Employee Id</label>
+                <input type="text" class="form-control" id="empId" asp-for="EmpId" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Employee Name</label>
+                <input type="text" class="form-control" id="name" asp-for="Name" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Mobile</label>
+                <input type="text" class="form-control" id="mobileNo" asp-for="MobileNo" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" asp-for="Address" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">DOB</label>
+                <input type="date" class="form-control" id="dob" asp-for="DoB" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">About</label>
+                <textarea class="form-control" id="about" asp-for="About"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Role</label>
+                <input type="text" class="form-control" id="role" asp-for="Role" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Job Description</label>
+                <textarea class="form-control" id="jobDesc" asp-for="JobDesc"></textarea>
+            </div>
+
+            <div class="mb-3 d-flex">
+                <button type="submit" class="btn btn-dark">Update</button>
+
+                <button type="submit"
+                        class="btn btn-danger ms-2"
+                        asp-area=""
+                        asp-controller="Employee"
+                        asp-action="Delete">
+                    Delete
+                </button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <p> No employee found!</p>
+    }
+</div>

@@ -1,0 +1,58 @@
+﻿@model List<LogGenerator.Models.Domain.NewEmployee>
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container text-center">
+        <h1>Employees</h1>
+    </div>
+</div>
+
+<div class="container py-3">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Employee Id</td>
+                    <td>Employee Name</td>
+                    <td>Mobile</td>
+                    <td>Address</td>
+                    <td>DOB</td>
+                    <td>About</td>
+                    <td>Role</td>
+                    <td>Job Description</td>
+                    <td> </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var newEmployee in Model)
+                {
+                    <tr>
+                        <td>@newEmployee.EmpId</td>
+                        <td>@newEmployee.Name</td>
+                        <td>@newEmployee.MobileNo</td>
+                        <td>@newEmployee.Address</td>
+                        <td>@newEmployee.DoB</td>
+                        <td>@newEmployee.About</td>
+                        <td>@newEmployee.Role</td>
+                        <td>@newEmployee.JobDesc</td>
+                        <td>
+                            <a asp-area=""
+                               asp-controller="Employee"
+                               asp-action="Edit"
+                               asp-route-id="@newEmployee.EmpId">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Employees!</p>
+    }
+
+</div>
